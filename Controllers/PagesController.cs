@@ -1,14 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using NonsUserTable.APiDtos.Request.Page;
-using NonsUserTable.APiDtos.Respose;
-using NonsUserTable.APiDtos.Respose.Page;
-using NonsUserTable.Entites;
-using NonsUserTable.Enums;
-using NonsUserTable.IUnitOfWork;
-using NonsUserTable.Utilites;
-
-namespace NonsUserTable.Controllers
+﻿namespace NonsUserTable.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

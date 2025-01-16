@@ -3,6 +3,9 @@
 using System.Text.Json.Serialization;
 =======
 >>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+<<<<<<< HEAD
+=======
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
 
 namespace NonsUserTable.APiDtos.Respose.RolePage
 {

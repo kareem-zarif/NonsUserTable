@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace NonsUserTable.APiDtos.Request.Page
+﻿namespace NonsUserTable.APiDtos.Request.Page
 {
     public class PageReqU_ApiDto
     {

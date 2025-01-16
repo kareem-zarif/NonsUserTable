@@ -1,7 +1,4 @@
-﻿using NonsUserTable.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace NonsUserTable.APiDtos.Request.RolePage
+﻿namespace NonsUserTable.APiDtos.Request.RolePage
 {
     public class RolePageReqU_ApiDto
     {

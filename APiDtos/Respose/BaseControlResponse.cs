@@ -1,7 +1,4 @@
-﻿using NonsUserTable.Enums;
-using System.Text.Json.Serialization;
-
-namespace NonsUserTable.APiDtos.Respose
+﻿namespace NonsUserTable.APiDtos.Respose
 {
     public class BaseControlResponse<TResonse>
         where TResonse : class
