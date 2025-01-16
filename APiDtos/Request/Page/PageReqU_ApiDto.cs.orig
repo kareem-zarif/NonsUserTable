@@ -1,10 +1,19 @@
-﻿namespace NonsUserTable.APiDtos.Request.Page
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace NonsUserTable.APiDtos.Request.Page
 {
     public class PageReqU_ApiDto
     {
         [Required]
+<<<<<<< HEAD
+        public Guid Id { get; set; }
+=======
+<<<<<<< HEAD
         public Guid? Id { get; set; }
-
+=======
+        public Guid Id { get; set; }
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+>>>>>>> master
         [Required]
         public string Name { get; set; }
         [Required]

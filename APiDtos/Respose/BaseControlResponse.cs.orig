@@ -1,0 +1,22 @@
+﻿using NonsUserTable.Enums;
+using System.Text.Json.Serialization;
+
+namespace NonsUserTable.APiDtos.Respose
+{
+    public class BaseControlResponse<TResonse>
+        where TResonse : class
+    {
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+<<<<<<< HEAD
+        public RespinseResultEnum ResponseResult { get; set; }
+=======
+<<<<<<< HEAD
+        public ResponseResultEnum ResponseResult { get; set; }
+=======
+        public RespinseResultEnum ResponseResult { get; set; }
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+>>>>>>> master
+        public TResonse Data { get; set; }
+        public ErrorResponse ErrorDetails { get; set; }
+    }
+}

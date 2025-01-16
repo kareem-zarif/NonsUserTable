@@ -1,0 +1,159 @@
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using NonsUserTable.APiDtos.Request.RolePage;
+using NonsUserTable.APiDtos.Respose;
+using NonsUserTable.APiDtos.Respose.RolePage;
+using NonsUserTable.Entites;
+<<<<<<< HEAD
+using NonsUserTable.IUnitOfWork;
+=======
+<<<<<<< HEAD
+using NonsUserTable.Enums;
+using NonsUserTable.IUnitOfWork;
+using NonsUserTable.Utilites;
+=======
+using NonsUserTable.IUnitOfWork;
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+>>>>>>> master
+
+namespace NonsUserTable.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RolePagesController : ControllerBase
+    {
+        private readonly IUOW _uow;
+        private readonly IMapper _mapper;
+        public RolePagesController(IUOW uow, IMapper mapper)
+        {
+            _uow = uow;
+            _mapper = mapper;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(RolePageReqC_ApiDto createModel)
+        {
+            var response = new BaseControlResponse<RolePageResApiDto>();
+<<<<<<< HEAD
+
+            var itemToCreate = _mapper.Map<RolePage>(createModel);
+            var createdItem = await _uow.rolePageRepo.CreateAsync(itemToCreate);
+=======
+<<<<<<< HEAD
+            try
+            {
+                var itemToCreate = _mapper.Map<RolePage>(createModel);
+                var createdItem = await _uow.rolePageRepo.CreateAsync(itemToCreate);
+                int savedChanges = await _uow.CompleteAsync();
+                if (savedChanges == 0)
+                    throw new Exception($"error saving to db");
+                var responseDto = _mapper.Map<RolePageResApiDto>(createdItem);
+
+                response.ResponseResult = ResponseResultEnum.Success;
+                response.Data = responseDto;
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorCatcherUtlity<RolePageResApiDto>().CatchErrorAndReturnBaseControolerResponse(Guid.NewGuid(), $"error creating Role_Page", ex);
+            }
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAsync(Guid id)
+        {
+            var response = new BaseControlResponse<RolePageResApiDto>();
+            try
+            {
+                var foundItem = await _uow.rolePageRepo.GetAsync(id);
+                var responseDto = _mapper.Map<RolePageResApiDto>(foundItem);
+
+                response.ResponseResult = ResponseResultEnum.Success;
+                response.Data = responseDto;
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorCatcherUtlity<RolePageResApiDto>().CatchErrorAndReturnBaseControolerResponse(Guid.NewGuid(), $"error getting Role_Page with id : {id}", ex);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAsync()
+        {
+            var response = new BaseControlResponse<List<RolePageResApiDto>>();
+            try
+            {
+                var foundList = await _uow.rolePageRepo.GetAsync();
+                var responseListDto = _mapper.Map<List<RolePageResApiDto>>(foundList);
+
+                response.ResponseResult = ResponseResultEnum.Success;
+                response.Data = responseListDto;
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorCatcherUtlity<List<RolePageResApiDto>>().CatchErrorAndReturnBaseControolerResponse(Guid.NewGuid(), $"error getting all Role_Pages", ex);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(RolePageReqU_ApiDto updateModel)
+        {
+            var response = new BaseControlResponse<RolePageResApiDto>();
+            try
+            {
+                var itemToUpdate = _mapper.Map<RolePage>(updateModel);
+                if (itemToUpdate.RoleId.Equals(Guid.Parse("fefbb940-7fed-4746-bbe3-360a2a165a78")))
+                    itemToUpdate.AccessType = AccessTypeEnum.Admin;
+
+                var updatedItem = await _uow.rolePageRepo.UpdateAsync(itemToUpdate);
+                int savedChanges = await _uow.CompleteAsync();
+                if (savedChanges == 0)
+                    throw new Exception($"error saving in db");
+                var responseDto = _mapper.Map<RolePageResApiDto>(updatedItem);
+
+                response.ResponseResult = ResponseResultEnum.Success;
+                response.Data = responseDto;
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorCatcherUtlity<RolePageResApiDto>().CatchErrorAndReturnBaseControolerResponse(Guid.NewGuid(), $"error updating  a Role_Page :{updateModel.Id}", ex);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(Guid id)
+        {
+            var response = new BaseControlResponse<RolePageResApiDto>();
+            try
+            {
+                var foundItem = await _uow.rolePageRepo.DeleteAsync(id);
+                int savedChanges = await _uow.CompleteAsync();
+                if (savedChanges == 0)
+                    throw new Exception($"error saving in db");
+                var responseDto = _mapper.Map<RolePageResApiDto>(foundItem);
+
+                response.ResponseResult = ResponseResultEnum.Success;
+                response.Data = responseDto;
+            }
+            catch (Exception ex)
+            {
+                response = new ErrorCatcherUtlity<RolePageResApiDto>().CatchErrorAndReturnBaseControolerResponse(Guid.NewGuid(), $"error deleting Role_Page : {id}", ex);
+            }
+=======
+
+            var itemToCreate = _mapper.Map<RolePage>(createModel);
+            var createdItem = await _uow.rolePageRepo.CreateAsync(itemToCreate);
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+>>>>>>> master
+
+            return Ok(response);
+        }
+
+    }
+}

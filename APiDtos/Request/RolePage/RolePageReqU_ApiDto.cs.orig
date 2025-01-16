@@ -1,0 +1,30 @@
+﻿using NonsUserTable.Enums;
+using System.ComponentModel.DataAnnotations;
+
+namespace NonsUserTable.APiDtos.Request.RolePage
+{
+    public class RolePageReqU_ApiDto
+    {
+        [Required]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        public Guid? Id { get; set; }
+        [Required]
+        public Guid? RoleId { get; set; }
+        [Required]
+        public Guid? PageId { get; set; }
+=======
+>>>>>>> master
+        public Guid Id { get; set; }
+        [Required]
+        public Guid RoleId { get; set; }
+        [Required]
+        public Guid PageId { get; set; }
+<<<<<<< HEAD
+=======
+>>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+>>>>>>> master
+        public AccessTypeEnum AccessType { get; set; } = AccessTypeEnum.readOnly;
+    }
+}
