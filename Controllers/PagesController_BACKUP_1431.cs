@@ -36,15 +36,8 @@ namespace NonsUserTable.Controllers
                     throw new Exception($"error saving changes in db");
                 var responseDto = _mapper.Map<PageResApiDto>(createdPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = RespinseResultEnum.Success;
-=======
-<<<<<<< HEAD
-                response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
->>>>>>> master
+
                 response.Data = responseDto;
             }
             catch (Exception ex)
@@ -63,15 +56,8 @@ namespace NonsUserTable.Controllers
                 var foundPage = await _uow.pageRepo.GetAsync(id);
                 var responseDto = _mapper.Map<PageResApiDto>(foundPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = RespinseResultEnum.Success;
-=======
-<<<<<<< HEAD
-                response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
->>>>>>> master
+
                 response.Data = responseDto;
             }
             catch (Exception ex)
@@ -89,15 +75,8 @@ namespace NonsUserTable.Controllers
             {
                 var foundList = await _uow.pageRepo.GetAsync();
                 var listDto = _mapper.Map<List<PageResApiDto>>(foundList);
-<<<<<<< HEAD
                 response.ResponseResult = RespinseResultEnum.Success;
-=======
-<<<<<<< HEAD
-                response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
->>>>>>> master
+
                 response.Data = listDto;
             }
             catch (Exception ex)
@@ -122,15 +101,7 @@ namespace NonsUserTable.Controllers
                     throw new Exception($"error saving in db");
                 var responseDto = _mapper.Map<PageResApiDto>(updatedPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = RespinseResultEnum.Success;
-=======
-<<<<<<< HEAD
-                response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
->>>>>>> master
                 response.Data = responseDto;
             }
             catch (Exception ex)
@@ -153,15 +124,7 @@ namespace NonsUserTable.Controllers
                     throw new Exception($"error saving in db");
                 var responseDto = _mapper.Map<PageResApiDto>(deletedPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = RespinseResultEnum.Success;
-=======
-<<<<<<< HEAD
-                response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
->>>>>>> master
                 response.Data = responseDto;
             }
             catch (Exception ex)
