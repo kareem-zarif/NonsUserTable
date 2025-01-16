@@ -110,11 +110,8 @@ namespace NonsUserTable.Controllers
                     throw new Exception($"error saving in db");
                 var responseDto = _mapper.Map<PageResApiDto>(updatedPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
+
                 response.Data = responseDto;
             }
             catch (Exception ex)
@@ -137,11 +134,7 @@ namespace NonsUserTable.Controllers
                     throw new Exception($"error saving in db");
                 var responseDto = _mapper.Map<PageResApiDto>(deletedPage);
 
-<<<<<<< HEAD
                 response.ResponseResult = ResponseResultEnum.Success;
-=======
-                response.ResponseResult = RespinseResultEnum.Success;
->>>>>>> 8b739017b50376684d0193e40881f9e6535cd14b
                 response.Data = responseDto;
             }
             catch (Exception ex)
